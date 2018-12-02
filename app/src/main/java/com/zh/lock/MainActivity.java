@@ -18,15 +18,22 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         mAgent = new LockAgent(this);
         mAgent.setOnLockListener(new LockAgent.SimpleOnLockListener() {
+            @Override
+            public void onLockSuccess() {
+                super.onLockSuccess();
+                finish();
+            }
 
             @Override
             public void onLockFail(Throwable error) {
+                super.onLockFail(error);
                 Log.d(TAG, "Lock Fail： " + error.getMessage());
                 finish();
             }
 
             @Override
             public void onLockPermissionCancel() {
+                super.onLockPermissionCancel();
                 Log.d(TAG, "Lock Permission Cancel");
                 toast(getString(R.string.request_lock_permission_fail));
                 finish();
