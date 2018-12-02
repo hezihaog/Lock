@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">一鍵鎖定螢幕</string>
+    <string name="request_lock_permission_fail">允許鎖屏許可權，才能鎖屏哦</string>
+</resources>
